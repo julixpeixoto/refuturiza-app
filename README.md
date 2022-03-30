@@ -12,13 +12,13 @@ Postgress
 #### Run the docker compose to create container
 
 ```
-    $ docker compose up
+$ docker compose up
 ```
 
 #### Run in the app directory to running app
 
 ```
-    $ composer install
-    $ php artisan key:generate
-    $ php artisan serve
+$ composer install
+$ php artisan key:generate
+$ php artisan serve
 ```
