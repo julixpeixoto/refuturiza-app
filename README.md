@@ -5,6 +5,7 @@ Refuturiza's app of technical challenge to job opening.
 ## Requeriments
 
 PHP ^8.1 (with curl, openssl, fileinfo enabled)
+
 Postgress
 
 ## How to run
