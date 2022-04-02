@@ -14,8 +14,6 @@
         .font-family-karla { font-family: karla; }
         .bg-sidebar { background: #EF4444; }
         .cta-btn { color: #3d68ff; }
-        .upgrade-btn { background: #1947ee; }
-        .upgrade-btn:hover { background: #EF4444; }
         .active-nav-link { background: #DC2626; }
         .nav-item:hover { background: #DC2626; }
         .account-link:hover { background: #3d68ff; }
