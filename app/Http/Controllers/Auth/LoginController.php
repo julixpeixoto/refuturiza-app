@@ -2,39 +2,31 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Client\ApiClient;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
     protected $redirectTo = RouteServiceProvider::HOME;
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    protected function authenticated(Request $request, $user)
     {
-        $this->middleware('guest')->except('logout');
+        $this->setUserSession($user);
+    }
+
+    protected function setUserSession()
+    {
+        $user = User::find(Auth::user()->id);
+        $userGitHub = explode('/', $user->github_url)[3];
+        $avatarUrl = ApiClient::getUserAvatarURL($userGitHub);
+        session(['avatar_url' => $avatarUrl]);
     }
 }

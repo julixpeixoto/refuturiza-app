@@ -20,7 +20,7 @@
                 <tbody class="text-gray-700">
                 @foreach($users as $key => $user)
                     <tr @if ($key % 2) class="bg-gray-200" @endif>
-                        <td class="w-1/3 text-left py-3 px-4"><img class="w-14 rounded-full avatar-img" src="{{ $user->avatar_url }}"></td>
+                        <td class="w-1/3 text-left py-3 px-4"><img class="w-14 rounded-full" src="{{ $user->avatar_url }}"></td>
                         <td class="w-1/3 text-left py-3 px-4">{{ $user->login }}</td>
                         <td class="w-1/3 text-left py-3 px-4">{{ $user->url }}</td>
                         <td class="text-left py-3 px-4"><a class="hover:text-blue-500">{{ $user->type }}</a></td>

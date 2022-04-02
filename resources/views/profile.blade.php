@@ -8,15 +8,20 @@
                 <p class="text-xl pb-6 flex items-center">
                     <i class="fas fa-user mr-3"></i> Perfil
                 </p>
+                <img class="w-20 m-2 rounded-full" src="{{ $user->avatar_url }}">
                 <div class="leading-loose">
                     <form class="p-10 bg-white rounded shadow-xl">
                         <div class="">
                             <label class="block text-sm text-gray-600" for="name">Nome</label>
-                            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" value="{{ $user->name }}" required="" placeholder="Your Name" aria-label="Name">
+                            <input class="w-full px-5 py-1 text-gray-700 bg-gray-200 rounded" id="name" name="name" type="text" value="{{ $user->name }}" required="" placeholder="Seu Name" aria-label="Name">
                         </div>
                         <div class="mt-2">
                             <label class="block text-sm text-gray-600" for="email">Email</label>
-                            <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" value="{{ $user->email }}" required="" placeholder="Your Email" aria-label="Email">
+                            <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="email" name="email" type="text" value="{{ $user->email }}" required="" placeholder="Seu Email" aria-label="Email">
+                        </div>
+                        <div class="mt-2">
+                            <label class="block text-sm text-gray-600" for="email">GitHub</label>
+                            <input class="w-full px-5  py-4 text-gray-700 bg-gray-200 rounded" id="github_url" name="github_url" type="text" value="{{ $user->github_url }}" required="" placeholder="Seu GitHub" aria-label="Email">
                         </div>
                         <div class="mt-6">
                             <button class="px-4 py-1 text-white font-light tracking-wider bg-gray-900 rounded" type="submit">Salvar</button>
