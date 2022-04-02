@@ -8,6 +8,7 @@
             <i class="fas fa-users mr-3"></i> Usuários do Github
         </p>
         <div class="bg-white overflow-auto">
+            @if($users)
             <table class="min-w-full bg-white">
                 <thead class="bg-red-500 text-white">
                 <tr>
@@ -26,9 +27,11 @@
                         <td class="w-2/7 text-left py-3 px-4"><a class="hover:text-blue-500">{{ $user->type }}</a></td>
                     </tr>
                 @endforeach
-
                 </tbody>
             </table>
+                @else
+                <p class="text-xl pb-3">Nenhum usuário encontrado</p>
+                @endif
         </div>
     </div>
 @endsection

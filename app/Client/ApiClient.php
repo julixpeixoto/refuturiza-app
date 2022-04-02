@@ -8,20 +8,42 @@ class ApiClient {
 
     public static function getUsersData($userUnit) : string
     {
-        define("BASE_URL", env('API_SOURCE_USERS'));
+        try {
+            define("BASE_URL", env('API_SOURCE_USERS'));
 
-        define("PARAMETER", "per_page");
+            define("PARAMETER", "per_page");
 
-        return Http::get(BASE_URL . "?" . PARAMETER . "=" . $userUnit);
+            $response = Http::get(BASE_URL . "?" . PARAMETER . "=" . $userUnit);
+
+            if($response->getStatusCode() == 200) {
+                return $response;
+            } else {
+                error_log("Error on API call:". $response->body());
+                return "";
+            }
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     public static function getUserData($user) : string
     {
-        define("BASE_URL", env('API_SOURCE_USERS'));
+        try {
+            define("BASE_URL", env('API_SOURCE_USERS'));
 
-        define("PARAMETER", "per_page");
+            define("PARAMETER", "per_page");
 
-        return Http::get(BASE_URL . "/" . $user);
+            $response = Http::get(BASE_URL . "/" . $user);
+
+            if($response->getStatusCode() == 200) {
+                return $response;
+            } else {
+                error_log("Error on API call:". $response->body());
+                return "";
+            }
+        } catch (\Exception $e) {
+            return $e->getMessage();
+        }
     }
 
     public static function getUserAvatarURL(string $userGitHub) : string
