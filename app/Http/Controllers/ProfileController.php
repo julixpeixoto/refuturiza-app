@@ -11,7 +11,7 @@ class ProfileController extends Controller
     public function index(ApiClient $client)
     {
         $user = User::find(Auth::user()->id);
-        $userGitHub = explode('/', $user->github_url)[3];
+        $userGitHub = $user->github_url ? explode('/', $user->github_url)[3] : '';
         $user->avatar_url = $client::getUserAvatarURL($userGitHub);
         return view('profile', compact('user'));
     }
