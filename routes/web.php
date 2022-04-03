@@ -16,4 +16,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/profile/update', [ProfileController::class, 'update'])->name('profileUpdate');
 
     Route::get('/users', [UsersController::class, 'index'])->name('users');
+    Route::get('/users/create', [UsersController::class, 'create'])->name('addUsers');
+    Route::post('/users/store', [UsersController::class, 'store'])->name('saveUser');
 });
