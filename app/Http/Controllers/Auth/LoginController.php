@@ -25,7 +25,7 @@ class LoginController extends Controller
     protected function setUserSession()
     {
         $user = User::find(Auth::user()->id);
-        $userGitHub = explode('/', $user->github_url)[3];
+        $userGitHub = $user->github_url ? explode('/', $user->github_url)[3] : '';
         $avatarUrl = ApiClient::getUserAvatarURL($userGitHub);
         session(['avatar_url' => $avatarUrl]);
     }
