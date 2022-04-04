@@ -32,9 +32,13 @@
                 @endforeach
                 </tbody>
             </table>
+
                 @else
                     <p class="text-xl pb-3">Nenhum usuário encontrado</p>
                 @endif
+        </div>
+        <div class="px-5 py-5 bg-white border-t flex flex-col xs:flex-row xs:justify-between">
+            {{ $users->links('pagination::tailwind') }}
         </div>
     </div>
 @endsection

@@ -10,7 +10,7 @@ class UsersController extends Controller
 {
     public function index(ApiClient $client)
     {
-        $users = User::all();
+        $users = User::paginate(10);
 
         foreach ($users as $user) {
             $user->avatar_url = $client::getUserAvatarURL($user->getGitHubUser());

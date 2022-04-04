@@ -14,7 +14,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        $users = json_decode($this->client::getUsersData(100));
+        $users = paginate($this->client::getUsersData(100), 25);
 
         return view('home', compact('users'));
     }

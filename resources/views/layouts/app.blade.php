@@ -90,7 +90,7 @@ try {
                         {{ auth()->user()->isAdmin() ? '' : 'style="display: none;"' }}
                     >
                         <i class="fas fa-users mr-3"></i>
-                        Usuários {{auth()->user()->isAdmin()}}
+                        Usuários
                     </a>
                 </nav>
             </header>
