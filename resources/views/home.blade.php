@@ -7,6 +7,30 @@
         <p class="text-xl pb-3 flex items-center">
             <i class="fas fa-users mr-3"></i> Usuários do Github
         </p>
+
+        <div class="flex justify-left">
+            <div class="mb-3 xl:w-96">
+                <select class="form-select appearance-none
+                      block
+                      w-full
+                      px-3
+                      py-1.5
+                      text-base
+                      font-normal
+                      text-gray-700
+                      bg-white bg-clip-padding bg-no-repeat
+                      border border-solid border-gray-300
+                      rounded
+                      transition
+                      ease-in-out
+                      m-0
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
+                    <option selected onclick="window.location.href='/'">Classificar...</option>
+                    <option value="1" onclick="window.location.href='?q=followers'" @if(request()->input('q')=='followers') selected @endif>Seguidores</option>
+                    <option value="2" onclick="window.location.href='?q=repos'" @if(request()->input('q')=='repos') selected @endif>Repositórios</option>
+                </select>
+            </div>
+        </div>
         <div class="bg-white overflow-auto">
             @if($users)
             <table class="min-w-full bg-white">
