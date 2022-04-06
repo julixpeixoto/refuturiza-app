@@ -8,6 +8,26 @@ PHP ^8.1 (with curl, openssl, fileinfo, pdo_pgsql enabled)
 
 Postgress
 
+## Built with
+
+* PHP 8.1 
+
+* Laravel 9
+
+* Tailwind
+
+* Alpine JS
+
+* PostgreSQL
+
+## Screenshots
+
+![Alt text](https:/julix.me/img/github/login.png "Login page")
+*Login page*
+
+![Alt text](https:/julix.me/img/github/home.png "Home page")
+*Home page*
+
 ## How to run
 
  Run the docker compose to create container and start containers
