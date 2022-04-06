@@ -24,10 +24,13 @@
                       transition
                       ease-in-out
                       m-0
-                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
-                    <option selected onclick="window.location.href='/'">Classificar...</option>
-                    <option value="1" onclick="window.location.href='?q=followers'" @if(request()->input('q')=='followers') selected @endif>Seguidores</option>
-                    <option value="2" onclick="window.location.href='?q=repos'" @if(request()->input('q')=='repos') selected @endif>Repositórios</option>
+                      focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        aria-label="Default select example"
+                        onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"
+                >
+                    <option value="{{ url('/') }}">Classificar...</option>
+                    <option value="{{ url('/?q=followers') }}" @if(request()->input('q')=='followers') selected @endif>Seguidores</option>
+                    <option value="{{ url('/?q=repos') }}" @if(request()->input('q')=='repos') selected @endif>Repositórios</option>
                 </select>
             </div>
         </div>
