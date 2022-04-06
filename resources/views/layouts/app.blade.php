@@ -11,6 +11,8 @@ try {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <title>{{ env('APP_NAME') }}</title>
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -31,7 +33,7 @@ try {
     @auth()
         <aside class="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl">
             <div class="p-6">
-                <a href="{{ route('home') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+                <a href="{{ route('home') }}" class="text-white text-xl font-semibold uppercase hover:text-gray-300">{{ env('APP_NAME') }}</a>
             </div>
             <nav class="text-white text-base font-semibold pt-3">
                 <a href="{{ route('home') }}" class="flex items-center text-white py-4 pl-6 nav-item @if($path == '') active-nav-link @endif">
@@ -72,7 +74,7 @@ try {
             <!-- Mobile Header & Nav -->
             <header x-data="{ isOpen: false }" class="w-full bg-sidebar py-5 px-6 sm:hidden">
                 <div class="flex items-center justify-between">
-                    <a href="{{ route('home') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">Admin</a>
+                    <a href="{{ route('home') }}" class="text-white text-3xl font-semibold uppercase hover:text-gray-300">{{ env('APP_NAME') }}</a>
                     <button @click="isOpen = !isOpen" class="text-white text-3xl focus:outline-none">
                         <i x-show="!isOpen" class="fas fa-bars"></i>
                         <i x-show="isOpen" class="fas fa-times"></i>

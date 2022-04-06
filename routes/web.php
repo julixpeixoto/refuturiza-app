@@ -1,15 +1,16 @@
 <?php
 
-use App\Http\Controllers\ApiController;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');;
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::get('/api', [ApiController::class, 'show']);
     Route::get('/', [HomeController::class, 'index'])->name('home');
 
     Route::get('/profile', [ProfileController::class, 'index'])->name('profile');

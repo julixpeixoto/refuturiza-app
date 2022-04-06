@@ -32,7 +32,6 @@
                     </div>
                     <div class="flex items-baseline justify-between">
                         <button class="px-6 py-2 mt-4 text-white bg-red-500 rounded-lg hover:bg-yellow-900">Login</button>
-                        <a href="{{ route('password.request') }}" class="text-sm text-yellow-600 hover:underline">Forgot password?</a>
                     </div>
                 </div>
             </form>

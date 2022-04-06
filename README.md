@@ -26,6 +26,7 @@ password: 123456
 Rename the .env.example to .env and fill the data or add the vars to enviroment
 
 ```
+APP_NAME='Refuturiza App'
 API_SOURCE_USER=https://api.github.com/user
 API_SOURCE_USERS=https://api.github.com/users
 APP_KEY (generated with command in next step)
