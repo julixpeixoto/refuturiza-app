@@ -22,10 +22,10 @@ Postgress
 
 ## Screenshots
 
-![Alt text](https:/julix.me/img/github/login.png "Login page")
+![Alt text](https://github.com/julixpeixoto/refuturiza-app/blob/main/public/img/login.png?raw=true "Login page")
 *Login page*
 
-![Alt text](https:/julix.me/img/github/home.png "Home page")
+![Alt text](https://github.com/julixpeixoto/refuturiza-app/blob/main/public/img/home.png?raw=true "Home page")
 *Home page*
 
 ## How to run
